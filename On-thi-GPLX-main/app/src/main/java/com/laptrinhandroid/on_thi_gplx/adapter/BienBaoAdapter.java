@@ -43,7 +43,10 @@ public class BienBaoAdapter extends RecyclerView.Adapter<BienBaoAdapter.BienBaoV
         holder.txtRoadSignDescription.setText(roadSign.getDESCRIPTION());
         holder.imgRoadSign.setImageBitmap(converter.imageConverted());
     }
-
+    holder.itemView.setOnClickListener(v -> {
+        // Ví dụ: hiển thị tên biển báo khi click
+        Toast.makeText(context, "Bạn đã chọn: " + roadSign.getNAME(), Toast.LENGTH_SHORT).show();
+    };
     @Override
     public int getItemCount() {
         return list.size();
